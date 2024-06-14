@@ -177,15 +177,10 @@ function saveDocumentAsFileAttachedToAccount(account, filePath) {
 
 /* ********************************************************************
  * When our native code executes this javascript to locate our element, we will be
- * executing from the outermost document context. Using window.top to locate our
- * predefined container iFrame (id = 'iFrame'), we can ensure we locate our
- * report content as well. */
+ * executing from the current document context. We can simply seek the appropriate
+ * iframeId. */
 /* ********************************************************************/
 function getIFrameString(iframeId) {
-  if (window === window.top) {
-    return `document.getElementById('${iframeId}').contentDocument`
-  } else {
-    return `window.top.document.getElementById('iFrame').contentDocument.getElementById('${iframeId}').contentDocument`
-  }
+  return `document.getElementById('${iframeId}').contentDocument`
 }
 /* ********************************************************************/

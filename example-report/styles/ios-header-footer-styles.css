@@ -19,7 +19,7 @@
  * Font sizes should be increased to match this increase as well.
  * ********************************************************************/
 
-body { font-size: 48px; width: 2358px; }
+ body { font-size: 48px; width: 2358px; background-color: white; margin: 0px!important; }
 
 /* Note that these ids match the elements from our document that we place inside
  * our iFrames. */
